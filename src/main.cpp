@@ -3,6 +3,7 @@
 #include "solver.h"
 #include "expression.h"
 
+#include <limits>
 #include <iostream>
 #include <vector>
 #include <time.h>
@@ -38,7 +39,7 @@ int main(int argc, const char** argv) {
         } else if (choice == "2"){
             vector<int> _cardChoices = {0, 0, 0, 0};
 
-            cout << "Masukkan nilai kartu baru :" << endl; cin >> _cardChoices[0] >> _cardChoices[1] >> _cardChoices[2] >> _cardChoices[3];
+            cout << "Masukkan nilai kartu baru :" << endl; cin >> _cardChoices[0] >> _cardChoices[1] >> _cardChoices[2] >> _cardChoices[3]; cout << endl;
 
             if(!cin)
                 cin.clear();
@@ -53,6 +54,8 @@ int main(int argc, const char** argv) {
                 if(valid)
                     currentCards.SetDeck(_cardChoices);
             }
+
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         } else if (choice == "3"){
             csolver.SaveSolution();
         } else if (choice == "0"){
