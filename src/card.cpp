@@ -11,31 +11,43 @@ using namespace std;
  
 int randint(int start, int end)
 {
-    mt19937 mt(time(0));
+    // mt19937 mt();
 
-    return mt() % (end - start + 1) + start;
+    // return mt() % (end - start + 1) + start;
+
+    return rand() % (end - start + 1) + start;
 }
 
 void getCards(vector<int> &cards){
+    srand(time(0));
+
     // int cards[] = {NOT_A_CARD, NOT_A_CARD, NOT_A_CARD, NOT_A_CARD};
 
-    int i = 0, _card;
-    while (i < 4) {
-        _card = randint(0, 51); // since both ends inclusive
-        bool found = false;
+    // [for 52 cards format]
+    // int i = 0, _card;
+    // while (i < 4) {
+    //     _card = randint(1, 52); // since both ends inclusive // starts with 1
+    //     bool found = false;
 
-        for (int j = 0; j < i; j++){
-            if (found)
-                break;
+    //     for (int j = 0; j < i; j++){
+    //         if (found)
+    //             break;
 
-            if (cards[j] == _card)
-                found = true;
-        }
+    //         if (cards[j] == _card)
+    //             found = true;
+    //     }
         
-        if (!found) {
-            cards[i] = _card;
-            i++;
-        }
+    //     if (!found) {
+    //         cards[i] = _card;
+    //         i++;
+    //     }
+    // }
+
+    // [13 * 4 cards format]
+    int _card;
+    for(int i = 0; i < 4; i++){
+        _card = randint(1, 13); // since both ends inclusive // starts with 1
+        cards[i] = _card;
     }
 
     // cout << cards[0] << '-' << cards[1] << '-' << cards[2] << '-' << cards[3];
