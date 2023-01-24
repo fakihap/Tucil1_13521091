@@ -31,7 +31,6 @@ using namespace std;
             void ShowSolution();
             void ShowInfixSolution();
 
-            // should be static
             bool IsSolutionContains(vector<Expression> _solutionExpr, Expression _expr);
 
 

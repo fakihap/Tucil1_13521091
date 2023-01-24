@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include <iostream>
 #include <vector>
 
@@ -9,55 +8,12 @@
 
 using namespace std;
  
-int randint(int start, int end)
-{
-    // mt19937 mt();
-
-    // return mt() % (end - start + 1) + start;
-
+int randint(int start, int end){
     return rand() % (end - start + 1) + start;
 }
 
-void getCards(vector<char> &cards){
-    srand(time(0));
-
-    // int cards[] = {NOT_A_CARD, NOT_A_CARD, NOT_A_CARD, NOT_A_CARD};
-
-    // [for 52 cards format]
-    // int i = 0, _card;
-    // while (i < 4) {
-    //     _card = randint(1, 52); // since both ends inclusive // starts with 1
-    //     bool found = false;
-
-    //     for (int j = 0; j < i; j++){
-    //         if (found)
-    //             break;
-
-    //         if (cards[j] == _card)
-    //             found = true;
-    //     }
-        
-    //     if (!found) {
-    //         cards[i] = _card;
-    //         i++;
-    //     }
-    // }
-
-    // [13 * 4 cards format]
-    int _card;
-    for(int i = 0; i < 4; i++){
-        _card = randint(1, 13); // since both ends inclusive // starts with 1
-        cards[i] = _card;
-    }
-
-    // cout << cards[0] << '-' << cards[1] << '-' << cards[2] << '-' << cards[3];
-
-    // int kerd = (int)
-
-}
-
 Card::Card(){
-    
+
 }
 Card::Card(int init){
     value = init;
@@ -65,7 +21,7 @@ Card::Card(int init){
 
 string Card::asCard(){
     if (value == 0){
-        return "X"; // missing values
+        return "X"; // NOT A CARD
     } else if (value == 1){
         return "A";
     } else if (value == 11) {
@@ -92,7 +48,5 @@ void Card::SetCard(int val){
 }
 
 void Card::RandomizeCard(){
-    // srand(time(0));
-
     value = randint(1, 13);
 }
