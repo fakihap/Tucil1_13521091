@@ -36,19 +36,23 @@ int main(int argc, const char** argv) {
         if (choice == "1"){
             currentCards.RandomizeDeck();
         } else if (choice == "2"){
-            vector<int> _cardChoices;
+            vector<int> _cardChoices = {0, 0, 0, 0};
 
-            int _i = 0, _buf;
-            while(_i < 4){
-                cout << "Masukkan nilai Kartu ke-" << _i+1 << " : "; cin >> _buf;
+            cout << "Masukkan nilai kartu baru :" << endl; cin >> _cardChoices[0] >> _cardChoices[1] >> _cardChoices[2] >> _cardChoices[3];
 
-                if (1 <= _buf && _buf <= 13){
-                    _i++;
-                    _cardChoices.push_back(_buf);
+            if(!cin)
+                cin.clear();
+            else {
+                bool valid = true;
+                for(auto _i:_cardChoices){
+                    if (_i < 1 || _i > 13){
+                        valid = false;
+                    }
                 }
-            }
 
-            currentCards.SetDeck(_cardChoices);
+                if(valid)
+                    currentCards.SetDeck(_cardChoices);
+            }
         } else if (choice == "3"){
             csolver.SaveSolution();
         } else if (choice == "0"){
