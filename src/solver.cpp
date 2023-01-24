@@ -2,8 +2,6 @@
 #include "calculator.h"
 
 
-static vector<char> ops = {'+', '-', '*', '/'};
-
 vector<vector<char>> getPattern(int patternNum, vector<char> cards){
     vector<vector<char>> res;
 
@@ -43,26 +41,66 @@ vector<vector<char>> getPattern(int patternNum, vector<char> cards){
     return res;
 }
 
+bool eqVec(vector<char> a, vector<char> b){
+    if(a.size() == b.size()){
+        for(int i = 0; i < a.size(); i++){
+            if(a[i] != b[i]) {
+                // cout << "false " << i << " " << (int)a[i] << " " << (int)b[i] << endl;
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
 void solve(vector<vector<char>> &result, vector<char> cards){
     auto start = high_resolution_clock::now();
+    int count = 0;
 
     for(int ix = 1; ix <= 5; ix++){
         for(auto it:getPattern(ix, cards)){
             if(postfixCalculate(it) == 24){
-                for (auto a:it){
-                    bool isOps = false;
+                bool exists = false;
+                for(auto cR:result){
+                    // if (exists) break;
+                    // // cout << (int)cR[0] << (int)it[0] << endl;
+                                        // if (eqVec(cR, it)){
+                                        //     exists = true;
+                                        // } else {
+                                        //     for(auto zzz:cR){
+                                        //         cout << zzz;
+                                        //     } cout << "   "; 
 
-                for(auto b:ops) {
-                    if (a == b)
-                        isOps = true;
+                                        //     for(auto zzzz:it){
+                                        //         cout << zzzz;
+                                        //     } cout << "THIS" << endl;
+                                        // }
+
+                    // cout << exists << endl;
+                    // cout << cR.size() << it.size() << endl;
                 }
-                
-                if(isOps)
-                    cout << a << " ";
-                else
-                    cout << (int)a << " ";
-                }
+
+                // for (auto a:it){
+                //     bool isOps = false;
+
+                //     for(auto b:ops) {
+                //         if (a == b)
+                //             isOps = true;
+                //     }
+                    
+                //     if(isOps)
+                //         cout << a << " ";
+                //     else
+                //         cout << (int)a << " ";
+                // }
+                // showAsPostFix(it);
+                showAsInFix(it);
                 cout << " good" << endl;
+
+                result.push_back(it);
+                count++;
+
             } else {
                 // cout << "[" << postfixCalculate(it) << "] wrong" << endl;
             }
@@ -95,5 +133,6 @@ void solve(vector<vector<char>> &result, vector<char> cards){
 
     auto duration = duration_cast<microseconds>(stop - start);
 
+    cout << "there are " << count << " solutions. " << result.size() << " vector members." << endl;
     cout << "bruteforcing takes " << duration.count()/1000 << " ms" << endl;
 }

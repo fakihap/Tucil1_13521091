@@ -6,6 +6,7 @@
 
     "code-runner.customCommand": "echo Hello",
     "files.associations": {
-        "vector": "cpp"
+        "vector": "cpp",
+        "string": "cpp"
     }
 }
