@@ -1,4 +1,5 @@
 #include "card.h"
+#include "deck.h"
 // #include "calculator.h"
 #include "solver.h"
 
@@ -7,28 +8,15 @@
 
 using namespace std;
 
-static vector<char> currentCards;
+// static vector<char> currentCards;
 static vector<vector<char>> result;
 
-void RandomizeCard(){
-    getCards(currentCards);
-}
-
-void SetCard(int a, int b, int c, int d){
-    currentCards = {(char)a, (char)b, (char)c, (char)d};
-}
-
-void ShowCard(char val){
-    if((int)val == -1){
-        cout << "NONE";
-    } else {
-        cout << (int) val;
-    }
-}
+Deck currentCards;
 
 int main(int argc, const char** argv) {
     // cout << "main test:" << endl;
-    currentCards = {NOT_A_CARD, NOT_A_CARD, NOT_A_CARD, NOT_A_CARD};
+        // currentCards = {NOT_A_CARD, NOT_A_CARD, NOT_A_CARD, NOT_A_CARD};
+        
     // vector<char> keo = {2, 3, '*', 4, '+'};
     // // keo = {10, 3, '/', 9, '*', 6, '-'}; //==== 24
     // postfixCalculate(keo);
@@ -44,16 +32,19 @@ int main(int argc, const char** argv) {
     // cout << (int)currentCards[0] << ' ' << (int)currentCards[1] << ' ' << (int)currentCards[2] << ' ' << (int)currentCards[3] << endl;
 
     // solve(result, currentCards);
+    srand(time(0));
+
     bool start = true;
     while (start)
     {
         cout << "24-Card Game" << endl;
 
-        for(auto i:currentCards){
-            ShowCard(i);
-        }
+        currentCards.DisplayDeck();
+        // currentCards.RandomizeDeck();
+        currentCards.SetDeck(1, 10, 13, 12);
+        currentCards.DisplayDeck();
 
-        cin >> start;
+        break;
     }
     
 

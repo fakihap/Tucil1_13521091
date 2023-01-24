@@ -55,3 +55,34 @@ void getCards(vector<char> &cards){
     // int kerd = (int)
 
 }
+
+
+string Card::asCard(){
+    if (value == 0){
+        return "X"; // missing values
+    } else if (value == 1){
+        return "A";
+    } else if (value == 11) {
+        return "J";
+    } else if (value == 12) {
+        return "Q";
+    } else if (value == 13) {
+        return "K";
+    } else {
+        return to_string(value);
+    }
+}
+
+int Card::asInt(){
+    return (int) value;
+}
+
+void Card::SetCard(int val){
+    value = val;
+}
+
+void Card::RandomizeCard(){
+    // srand(time(0));
+
+    value = randint(1, 13);
+}
