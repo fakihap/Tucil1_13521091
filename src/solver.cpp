@@ -44,6 +44,8 @@ vector<vector<char>> getPattern(int patternNum, vector<char> cards){
 }
 
 void solve(vector<vector<char>> &result, vector<char> cards){
+    auto start = high_resolution_clock::now();
+
     for(int ix = 1; ix <= 5; ix++){
         for(auto it:getPattern(ix, cards)){
             if(postfixCalculate(it) == 24){
@@ -88,4 +90,10 @@ void solve(vector<vector<char>> &result, vector<char> cards){
     // } else {
     //     cout << "[" << postfixCalculate(toSolve) << "] wrong" << endl;
     // }
+
+    auto stop = high_resolution_clock::now();
+
+    auto duration = duration_cast<microseconds>(stop - start);
+
+    cout << "bruteforcing takes " << duration.count()/1000 << " ms" << endl;
 }

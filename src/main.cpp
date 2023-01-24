@@ -30,7 +30,8 @@ int main(int argc, const char** argv) {
 
     // RandomizeCard();
     // SetCard(1, 8, 9, 12);
-    SetCard(10, 3, 9, 6);
+    // SetCard(10, 3, 9, 6);
+    SetCard(6, 6, 4, 3);
     cout << (int)currentCards[0] << ' ' << (int)currentCards[1] << ' ' << (int)currentCards[2] << ' ' << (int)currentCards[3] << endl;
 
     solve(result, currentCards);
