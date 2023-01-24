@@ -26,6 +26,7 @@ using namespace std::chrono;
             void ShowDeck();
 
             void GenerateSolution();
+            void ClearSolution();
 
             void PushSolution(Expression candidateSolution);
 

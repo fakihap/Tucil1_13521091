@@ -56,6 +56,12 @@ void getCards(vector<char> &cards){
 
 }
 
+Card::Card(){
+    
+}
+Card::Card(int init){
+    value = init;
+}
 
 string Card::asCard(){
     if (value == 0){

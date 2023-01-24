@@ -30,11 +30,24 @@ int main(int argc, const char** argv) {
         cout << endl << endl;
         cout << "99. Keluar" << endl;
 
-        cout << endl << "Pilihan Anda : "; cin >> choice; cout << endl << endl;
+        cout << endl << "Pilihan Anda : "; cin >> choice; cout << endl;
 
         if (choice == 1){
             currentCards.RandomizeDeck();
         } else if (choice == 2){
+            vector<int> _cardChoices;
+
+            int _i = 0, _buf;
+            while(_i < 4){
+                cout << "Masukkan nilai Kartu ke-" << _i+1 << " : "; cin >> _buf;
+
+                if (1 <= _buf && _buf <= 13){
+                    _i++;
+                    _cardChoices.push_back(_buf);
+                }
+            }
+
+            currentCards.SetDeck(_cardChoices);
 
         } else if (choice == 0){
             csolver.SetDeck(currentCards);

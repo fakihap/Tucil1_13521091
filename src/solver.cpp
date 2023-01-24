@@ -147,6 +147,8 @@ void cardSolver::ShowDeck(){
 }
 
 void cardSolver::GenerateSolution(){
+    ClearSolution();
+
     time_t startTime, endTime;
     time(&startTime);
 
@@ -185,6 +187,10 @@ void cardSolver::GenerateSolution(){
     time(&endTime);
 
     cout << endl << "Execution time : " << (long)(endTime - startTime) << " ms" << endl;
+}
+
+void cardSolver::ClearSolution(){
+    solutionExpr.clear();
 }
 
 void cardSolver::PushSolution(Expression candidateSolution){

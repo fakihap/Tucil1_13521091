@@ -15,8 +15,9 @@ void Deck::RandomizeDeck(){
 }
 
 void Deck::SetDeck(int a, int b, int c, int d){
-    cardDeck[0].SetCard(a);
-    cardDeck[1].SetCard(b);
-    cardDeck[2].SetCard(c);
-    cardDeck[3].SetCard(d);
+    cardDeck = {Card(a), Card(b), Card(c), Card(d)};
+}
+
+void Deck::SetDeck(vector<int> vec){
+    cardDeck = {Card(vec[0]), Card(vec[1]), Card(vec[2]), Card(vec[3])};
 }

@@ -14,6 +14,9 @@ class Card {
     int value  = 0; // NOT A CARD
 
     public:
+        Card();
+        Card(int init);
+
         int asInt();
         string asCard();
         string asString();
