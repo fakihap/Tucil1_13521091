@@ -184,7 +184,7 @@ void cardSolver::GenerateSolution(){
 
     time(&endTime);
 
-    cout << "Execution time : " << (long)(endTime - startTime) << " ms" << endl;
+    cout << endl << "Execution time : " << (long)(endTime - startTime) << " ms" << endl;
 }
 
 void cardSolver::PushSolution(Expression candidateSolution){
@@ -194,6 +194,7 @@ void cardSolver::PushSolution(Expression candidateSolution){
 }
 
 void cardSolver::ShowSolution(){
+    cout << endl;
     if(solutionExpr.size() == 0)
         cout << "solutionExpr is empty" << endl;
     else
@@ -202,9 +203,11 @@ void cardSolver::ShowSolution(){
     for(auto i:solutionExpr){
         i.ShowExpr();
     }
+    cout << endl << endl;
 }
 
 void cardSolver::ShowInfixSolution(){
+    cout << endl;
     if(solutionExpr.size() == 0)
         cout << "solutionExpr is empty" << endl;
     else
@@ -213,6 +216,7 @@ void cardSolver::ShowInfixSolution(){
     for(auto i:solutionExpr){
         i.ShowExprAsInfix();
     }
+    cout << endl << endl;
 }
 
 bool cardSolver::IsSolutionContains(vector<Expression> _solutionExpr, Expression _expr){
