@@ -18,9 +18,16 @@ void SetCard(int a, int b, int c, int d){
     currentCards = {(char)a, (char)b, (char)c, (char)d};
 }
 
-int main(int argc, const char** argv) {
-    cout << "main test:" << endl;
+void ShowCard(char val){
+    if((int)val == -1){
+        cout << "NONE";
+    } else {
+        cout << (int) val;
+    }
+}
 
+int main(int argc, const char** argv) {
+    // cout << "main test:" << endl;
     currentCards = {NOT_A_CARD, NOT_A_CARD, NOT_A_CARD, NOT_A_CARD};
     // vector<char> keo = {2, 3, '*', 4, '+'};
     // // keo = {10, 3, '/', 9, '*', 6, '-'}; //==== 24
@@ -33,10 +40,22 @@ int main(int argc, const char** argv) {
     // SetCard(10, 3, 9, 6);
     // SetCard(6, 6, 4, 3);
     // SetCard(4, 4, 4, 2);
-    SetCard(4, 4, 4, 4); // weird
-    cout << (int)currentCards[0] << ' ' << (int)currentCards[1] << ' ' << (int)currentCards[2] << ' ' << (int)currentCards[3] << endl;
+    // SetCard(4, 4, 4, 4); // weird
+    // cout << (int)currentCards[0] << ' ' << (int)currentCards[1] << ' ' << (int)currentCards[2] << ' ' << (int)currentCards[3] << endl;
 
-    solve(result, currentCards);
+    // solve(result, currentCards);
+    bool start = true;
+    while (start)
+    {
+        cout << "24-Card Game" << endl;
+
+        for(auto i:currentCards){
+            ShowCard(i);
+        }
+
+        cin >> start;
+    }
+    
 
     
     return 0;
