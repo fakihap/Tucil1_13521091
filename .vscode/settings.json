@@ -1,0 +1,8 @@
+{
+
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ main.cpp card.cpp solver.cpp -o main && .\\main",
+    },
+
+    "code-runner.customCommand": "echo Hello"
+}
