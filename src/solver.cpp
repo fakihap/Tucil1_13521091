@@ -47,8 +47,6 @@ void cardSolver::GenerateSolution(){
     endTime = clock();
 
     lastExecutionTime = double(endTime - startTime) / double(CLOCKS_PER_SEC) * 1000;
-
-    
 }
 
 void cardSolver::ClearSolution(){
@@ -74,15 +72,16 @@ void cardSolver::ShowExecutionTime(){
 }
 
 void cardSolver::PushSolution(Expression candidateSolution){
-    if(!IsSolutionContains(solutionExpr, candidateSolution) && candidateSolution.getResult() == 24){
-        solutionExpr.push_back(candidateSolution);
+    if(candidateSolution.getResult() == 24){
+        if(!IsSolutionContains(solutionExpr, candidateSolution))
+            solutionExpr.push_back(candidateSolution);
     }
 }
 
 void cardSolver::ShowSolution(){
     cout << endl;
     if(solutionExpr.size() == 0)
-        cout << "solutionExpr is empty" << endl;
+        cout << "There is no solution for this set of cards." << endl;
     else
         cout << "There are " << solutionExpr.size() << " solutions." << endl;
     
@@ -95,7 +94,7 @@ void cardSolver::ShowSolution(){
 void cardSolver::ShowInfixSolution(){
     cout << endl;
     if(solutionExpr.size() == 0)
-        cout << "solutionExpr is empty" << endl;
+        cout << "There is no solution for this set of cards." << endl;
     else
         cout << "There are " << solutionExpr.size() << " solutions." << endl;
 
