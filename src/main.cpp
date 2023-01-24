@@ -1,4 +1,5 @@
 #include "card.h"
+#include "calculator.h"
 
 #include <iostream>
 #include <vector>
@@ -13,9 +14,11 @@ void RandomizeCard(){
 }
 
 int main(int argc, const char** argv) {
-    cout << "rtes" << endl;
+    cout << "main test:" << endl;
 
     currentCards = {NOT_A_CARD, NOT_A_CARD, NOT_A_CARD, NOT_A_CARD};
+    vector<char> keo = {2, 3, '*', 4, '+'};
+    postfixCalculate( keo);
 
     // currentCards = getCards();
 
