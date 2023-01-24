@@ -4,5 +4,8 @@
         "cpp": "cd $dir && g++ main.cpp card.cpp solver.cpp calculator.cpp -o main && .\\main",
     },
 
-    "code-runner.customCommand": "echo Hello"
+    "code-runner.customCommand": "echo Hello",
+    "files.associations": {
+        "vector": "cpp"
+    }
 }

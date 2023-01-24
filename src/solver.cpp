@@ -6,24 +6,40 @@ static vector<char> ops = {'+', '-', '*', '/'};
 
 vector<vector<char>> getPattern(int patternNum, vector<char> cards){
     vector<vector<char>> res;
-    for(auto i:ops){
-        for(auto j:ops){
-            for(auto k:ops){
-                if (patternNum == 1) {
-                    res.push_back({cards[3], cards[2], i, cards[1], j, cards[0], k});
-                } else if (patternNum == 2) {
-                    res.push_back({cards[3], cards[2], cards[1], i, j, cards[0], k});
-                } else if (patternNum == 3) {
-                    res.push_back({cards[3], cards[2], cards[1], i, cards[0], j, k});
-                } else if (patternNum == 4) {
-                    res.push_back({cards[3], cards[2], cards[1], cards[0], i, j, k});
-                } else if (patternNum == 5) {
-                    res.push_back({cards[3], cards[2], i, cards[1], cards[0], j, k});
+
+    for(int ia = 0; ia < 4; ia++){
+        for(int ib = 0; ib < 4; ib++){
+            if(ia == ib)
+                continue;
+            for(int ic = 0; ic < 4; ic++){
+                if(ia == ic || ib == ic)
+                    continue;
+                for(int id = 0; id < 4; id++){
+                    if(ia == id || ib == id || ic == id)
+                        continue;
+
+                    for(auto i:ops){
+                        for(auto j:ops){
+                            for(auto k:ops){
+                                if (patternNum == 1) {
+                                    res.push_back({cards[ia], cards[ib], i, cards[ic], j, cards[id], k});
+                                } else if (patternNum == 2) {
+                                    res.push_back({cards[ia], cards[ib], cards[ic], i, j, cards[id], k});
+                                } else if (patternNum == 3) {
+                                    res.push_back({cards[ia], cards[ib], cards[ic], i, cards[id], j, k});
+                                } else if (patternNum == 4) {
+                                    res.push_back({cards[ia], cards[ib], cards[ic], cards[id], i, j, k});
+                                } else if (patternNum == 5) {
+                                    res.push_back({cards[ia], cards[ib], i, cards[ic], cards[id], j, k});
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-
+    
     return res;
 }
 
