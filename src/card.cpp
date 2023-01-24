@@ -77,6 +77,10 @@ int Card::asInt(){
     return (int) value;
 }
 
+string Card::asString(){
+    return to_string(value);
+}
+
 void Card::SetCard(int val){
     value = val;
 }

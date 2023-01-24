@@ -16,6 +16,7 @@ class Card {
     public:
         int asInt();
         string asCard();
+        string asString();
 
         void SetCard(int val);
         void RandomizeCard();

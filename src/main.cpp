@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <vector>
+#include <time.h>
 
 using namespace std;
 
@@ -24,9 +25,11 @@ int main(int argc, const char** argv) {
 
     // solve(result, currentCards);
 
-    Expression exp;
-    exp.SetExpr({"2", "3", "+", "4", "*"});
+    Expression exp({"2", "3", "+", "4", "*"});
+    // exp.SetExpr({"2", "3", "+", "4", "*"});
     // exp.ShowExpr();
+
+    cardSolver csolver;
     cout << exp.getResult() << endl;
 
     srand(time(0));
@@ -38,8 +41,19 @@ int main(int argc, const char** argv) {
 
         currentCards.DisplayDeck();
         // currentCards.RandomizeDeck();
-        currentCards.SetDeck(1, 10, 13, 12);
+        // currentCards.SetDeck(1, 10, 13, 12);
+        currentCards.SetDeck(4, 4, 4, 4);
         currentCards.DisplayDeck();
+
+        csolver.SetDeck(currentCards);
+        csolver.ShowDeck();
+        csolver.GenerateSolution();
+        // csolver.PushSolution(Expression({currentCards.cardDeck[0].asString(), currentCards.cardDeck[1].asString(), "*", currentCards.cardDeck[2].asString(), "+", currentCards.cardDeck[3].asString(), "-"}));
+        // csolver.PushSolution(Expression({currentCards.cardDeck[0].asString(), currentCards.cardDeck[1].asString(), "*", currentCards.cardDeck[2].asString(), "+", currentCards.cardDeck[3].asString(), "-"}));
+        // csolver.PushSolution(Expression({currentCards.cardDeck[1].asString(), currentCards.cardDeck[0].asString(), "-", currentCards.cardDeck[2].asString(), "+", currentCards.cardDeck[3].asString(), "-"}));
+
+        csolver.ShowSolution();
+        csolver.ShowInfixSolution();
 
         break;
     }

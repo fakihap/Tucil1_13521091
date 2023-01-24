@@ -3,9 +3,9 @@
     #include "card.h"
 
     class Deck {
-        vector<Card> cardDeck = {Card(), Card(), Card(), Card()};
-
         public:
+            vector<Card> cardDeck = {Card(), Card(), Card(), Card()};
+            
             void DisplayDeck();
 
             void RandomizeDeck();
