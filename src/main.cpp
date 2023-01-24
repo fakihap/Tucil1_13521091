@@ -16,7 +16,7 @@ int main(int argc, const char** argv) {
     srand(time(0));
 
     bool start = true;
-    int choice = -1;
+    string choice = "-1";
     while (start)
     {
         cout << "############### 24-Card Game ###############" << endl;
@@ -33,9 +33,9 @@ int main(int argc, const char** argv) {
 
         cout << endl << "Pilihan Anda : "; cin >> choice; cout << endl;
 
-        if (choice == 1){
+        if (choice == "1"){
             currentCards.RandomizeDeck();
-        } else if (choice == 2){
+        } else if (choice == "2"){
             vector<int> _cardChoices;
 
             int _i = 0, _buf;
@@ -49,17 +49,17 @@ int main(int argc, const char** argv) {
             }
 
             currentCards.SetDeck(_cardChoices);
-        } else if (choice == 3){
+        } else if (choice == "3"){
             csolver.SaveSolution();
-        } else if (choice == 0){
+        } else if (choice == "0"){
             csolver.SetDeck(currentCards);
             csolver.GenerateSolution();
             csolver.ShowInfixSolution();
-        } else if (choice == 99){
+        } else if (choice == "99"){
             start = false;
         }
 
-        choice == -1;
+        choice == "-1";
     }
     
 
