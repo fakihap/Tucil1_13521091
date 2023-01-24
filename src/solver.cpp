@@ -11,8 +11,8 @@ void cardSolver::ShowDeck(){
 void cardSolver::GenerateSolution(){
     ClearSolution();
 
-    time_t startTime, endTime;
-    time(&startTime);
+    clock_t startTime, endTime;
+    startTime = clock();
 
     for(int di = 0; di < 4; di++){
         for(int dj = 0; dj < 4; dj++){
@@ -44,9 +44,11 @@ void cardSolver::GenerateSolution(){
         }
     }    
 
-    time(&endTime);
+    endTime = clock();
 
-    cout << endl << "Execution time : " << (long)(endTime - startTime) << " ms" << endl;
+    lastExecutionTime = double(endTime - startTime) / double(CLOCKS_PER_SEC) * 1000;
+
+    
 }
 
 void cardSolver::ClearSolution(){
@@ -65,6 +67,10 @@ void cardSolver::SaveSolution(){
     SolutionFile.close();
 
     cout << "Solutions saved as " + path << endl;
+}
+
+void cardSolver::ShowExecutionTime(){
+    cout << "Execution time : " << lastExecutionTime << " ms" << endl << endl;
 }
 
 void cardSolver::PushSolution(Expression candidateSolution){

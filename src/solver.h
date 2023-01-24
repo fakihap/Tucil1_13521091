@@ -19,12 +19,15 @@ using namespace std;
         Deck deckToSolve;
 
         public:
+            int lastExecutionTime;
             void SetDeck(Deck deck);
             void ShowDeck();
 
             void GenerateSolution();
             void ClearSolution();
             void SaveSolution();
+
+            void ShowExecutionTime();
 
             void PushSolution(Expression candidateSolution);
 

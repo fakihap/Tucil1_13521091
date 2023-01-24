@@ -59,6 +59,8 @@ int main(int argc, const char** argv) {
             csolver.SetDeck(currentCards);
             csolver.GenerateSolution();
             csolver.ShowInfixSolution();
+
+            csolver.ShowExecutionTime();
         } else if (choice == "99"){
             start = false;
         }
