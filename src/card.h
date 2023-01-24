@@ -9,6 +9,6 @@ using namespace std;
 
 int randint(int start, int end);
 
-void getCards(vector<int> &cards);
+void getCards(vector<char> &cards);
 
 #endif

@@ -5,7 +5,7 @@ int postfixCalculate(vector<char> vec) {
 
     vec.shrink_to_fit();
 
-    cout << endl << "size is" << vec.size() << endl;
+    // cout << endl << "size is" << vec.size() << endl;
 
     for(auto a:vec){
         // printf("%c +", a);
@@ -32,7 +32,10 @@ int postfixCalculate(vector<char> vec) {
     }
 
     result.shrink_to_fit();
-    for(auto re:result){
-        cout << "hasilnya adalah " << re;
-    } cout << endl;
+    // cout << "hasilnya adalah " << result[0] << endl;
+
+    if (result.size() != 1)
+        cout << "Calculator : WARNING, result vect has more than 1 member : " << result.size() << endl;
+
+    return result[0];
 }

@@ -33,7 +33,9 @@ int main(){
         cout << a << " ";
     cout << endl;
 
-    cout << "sda" ;
+    float k = (( 10.0 / 3 ) * 9 );
+    cout << "sda" <<  k << 3.0 << (float) 3 << endl;
+    printf("%f %f %f", 3.0, (float)3, k);
 
     return 0;
 }

@@ -18,7 +18,7 @@ int randint(int start, int end)
     return rand() % (end - start + 1) + start;
 }
 
-void getCards(vector<int> &cards){
+void getCards(vector<char> &cards){
     srand(time(0));
 
     // int cards[] = {NOT_A_CARD, NOT_A_CARD, NOT_A_CARD, NOT_A_CARD};
