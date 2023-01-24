@@ -193,6 +193,20 @@ void cardSolver::ClearSolution(){
     solutionExpr.clear();
 }
 
+void cardSolver::SaveSolution(){
+    string path = "../test/Solution_" + to_string(time(0)) + ".txt";
+
+    ofstream SolutionFile(path);
+
+    for(auto i:solutionExpr){
+        SolutionFile << i.GetExprAsInfix();
+    }
+
+    SolutionFile.close();
+
+    cout << "Solutions saved as " + path << endl;
+}
+
 void cardSolver::PushSolution(Expression candidateSolution){
     if(!IsSolutionContains(solutionExpr, candidateSolution) && candidateSolution.getResult() == 24){
         solutionExpr.push_back(candidateSolution);

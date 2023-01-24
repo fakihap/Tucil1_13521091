@@ -2,18 +2,15 @@
 #define SOLVER_H
 
 #include <vector>
-
-#include <chrono>
+#include <fstream>
 
 #include "expression.h"
 #include "deck.h"
 
+#include "time.h"
+
 using namespace std;
-using namespace std::chrono;
 
-    // vector<vector<char>> getPattern(int patternNum, vector<char> cards);
-
-    // void solve(vector<vector<char>> &result, vector<char> cards);
     static vector<string> ops = {"+", "-", "*", "/"};
 
     class cardSolver {
@@ -27,6 +24,7 @@ using namespace std::chrono;
 
             void GenerateSolution();
             void ClearSolution();
+            void SaveSolution();
 
             void PushSolution(Expression candidateSolution);
 

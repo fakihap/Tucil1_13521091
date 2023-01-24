@@ -47,6 +47,53 @@ void Expression::SetExpr(vector<string> vec){
     expr = vec;
 }
 
+string Expression::GetExpr(){
+    string result;
+
+    for(auto i:expr){
+        result += i + " ";
+    } result += "\n";
+
+    return result;
+}   
+
+string Expression::GetExprAsInfix(){
+    vector<float> numStack;
+    vector<string> infixStack;
+
+    for(auto a:expr){
+        if(a != "+" && a != "-" && a != "*" && a != "/"){
+            numStack.push_back(stringToFloat(a));
+            infixStack.push_back(a);
+        } else {
+            float _temp1 = numStack.back(); numStack.pop_back();
+            float _temp2 = numStack.back(); numStack.pop_back();
+
+            string _tempStr1 = infixStack.back(); infixStack.pop_back();
+            string _tempStr2 = infixStack.back(); infixStack.pop_back();
+
+            if(a == "+"){
+                numStack.push_back(_temp2 + _temp1);
+                infixStack.push_back("( " + _tempStr1 + " + " + _tempStr2 + " )");
+            } else 
+            if (a == "-"){
+                numStack.push_back(_temp2 - _temp1);
+                infixStack.push_back("( " + _tempStr1 + " - " + _tempStr2 + " )");
+            } else
+            if (a == "*"){
+                numStack.push_back(_temp2 * _temp1);
+                infixStack.push_back("( " + _tempStr1 + " * " + _tempStr2 + " )");
+            } else
+            if (a == "/"){
+                numStack.push_back(_temp2 / _temp1);
+                infixStack.push_back("( " + _tempStr1 + " / " + _tempStr2 + " )");
+            }
+        }   
+    }   
+
+    return infixStack[0] + "\n";
+}
+
 void Expression::ShowExpr(){
     for(auto i:expr){
         cout << i << " ";

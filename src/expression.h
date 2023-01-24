@@ -19,7 +19,9 @@ using namespace std;
             float stringToFloat(string str);
 
             void SetExpr(vector<string> vec);
-            // void SetExprToPattern(int pattern, Deck deck);
+            string GetExpr();
+            string GetExprAsInfix();
+
             void ShowExpr();
             void ShowExprAsInfix();
 

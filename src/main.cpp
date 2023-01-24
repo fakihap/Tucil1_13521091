@@ -25,6 +25,7 @@ int main(int argc, const char** argv) {
         cout << endl << "Menu" << endl;
         cout << " 1. Acak Kartu" << endl;
         cout << " 2. Atur Kartu" << endl;
+        cout << " 3. Simpan Solusi" << endl;
         cout << endl;
         cout << " 0. Cari Solusi" << endl;
         cout << endl << endl;
@@ -48,7 +49,8 @@ int main(int argc, const char** argv) {
             }
 
             currentCards.SetDeck(_cardChoices);
-
+        } else if (choice == 3){
+            csolver.SaveSolution();
         } else if (choice == 0){
             csolver.SetDeck(currentCards);
             csolver.GenerateSolution();
