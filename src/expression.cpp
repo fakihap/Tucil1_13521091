@@ -29,10 +29,13 @@ int Expression::getResult(){
         }   
     }
 
-    if (numStack.size() != 1)
-        cout << "EXPRESSION : WARNING numStack has more than 1 member";
-
-    return numStack[0];
+    // if (numStack.size() != 1)
+    //     cout << "EXPRESSION : WARNING numStack has more than 1 member";
+    
+    if ((numStack[0] - (int)numStack[0]) == 0)
+        return (int)numStack[0];
+    else
+        return 0;
 }
 
 float Expression::stringToFloat(string str){
@@ -74,19 +77,19 @@ string Expression::GetExprAsInfix(){
 
             if(a == "+"){
                 numStack.push_back(_temp2 + _temp1);
-                infixStack.push_back("( " + _tempStr1 + " + " + _tempStr2 + " )");
+                infixStack.push_back("( " + _tempStr2 + " + " + _tempStr1 + " )");
             } else 
             if (a == "-"){
                 numStack.push_back(_temp2 - _temp1);
-                infixStack.push_back("( " + _tempStr1 + " - " + _tempStr2 + " )");
+                infixStack.push_back("( " + _tempStr2 + " - " + _tempStr1 + " )");
             } else
             if (a == "*"){
                 numStack.push_back(_temp2 * _temp1);
-                infixStack.push_back("( " + _tempStr1 + " * " + _tempStr2 + " )");
+                infixStack.push_back("( " + _tempStr2 + " * " + _tempStr1 + " )");
             } else
             if (a == "/"){
                 numStack.push_back(_temp2 / _temp1);
-                infixStack.push_back("( " + _tempStr1 + " / " + _tempStr2 + " )");
+                infixStack.push_back("( " + _tempStr2 + " / " + _tempStr1 + " )");
             }
         }   
     }   
@@ -117,19 +120,19 @@ void Expression::ShowExprAsInfix(){
 
             if(a == "+"){
                 numStack.push_back(_temp2 + _temp1);
-                infixStack.push_back("( " + _tempStr1 + " + " + _tempStr2 + " )");
+                infixStack.push_back("( " + _tempStr2 + " + " + _tempStr1 + " )");
             } else 
             if (a == "-"){
                 numStack.push_back(_temp2 - _temp1);
-                infixStack.push_back("( " + _tempStr1 + " - " + _tempStr2 + " )");
+                infixStack.push_back("( " + _tempStr2 + " - " + _tempStr1 + " )");
             } else
             if (a == "*"){
                 numStack.push_back(_temp2 * _temp1);
-                infixStack.push_back("( " + _tempStr1 + " * " + _tempStr2 + " )");
+                infixStack.push_back("( " + _tempStr2 + " * " + _tempStr1 + " )");
             } else
             if (a == "/"){
                 numStack.push_back(_temp2 / _temp1);
-                infixStack.push_back("( " + _tempStr1 + " / " + _tempStr2 + " )");
+                infixStack.push_back("( " + _tempStr2 + " / " + _tempStr1 + " )");
             }
         }   
     }   
