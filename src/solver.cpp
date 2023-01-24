@@ -147,6 +147,9 @@ void cardSolver::ShowDeck(){
 }
 
 void cardSolver::GenerateSolution(){
+    time_t startTime, endTime;
+    time(&startTime);
+
     for(int di = 0; di < 4; di++){
         for(int dj = 0; dj < 4; dj++){
             if(dj == di)
@@ -160,13 +163,11 @@ void cardSolver::GenerateSolution(){
                     if(dl == di || dl == dj || dl == dk)
                         continue;
 
+                    // cout << di << dj << dk << dl << endl;
+
                     for(auto i:ops) {
                         for(auto j:ops){
                             for(auto k:ops){
-                                // i = "+";
-                                // j = "+";
-                                // k = "+";
-                                // cout << i;
                                 PushSolution(Expression({deckToSolve.cardDeck[di].asString(), deckToSolve.cardDeck[dj].asString(), i, deckToSolve.cardDeck[dk].asString(), j, deckToSolve.cardDeck[dl].asString(), k}));
                                 PushSolution(Expression({deckToSolve.cardDeck[di].asString(), deckToSolve.cardDeck[dj].asString(), deckToSolve.cardDeck[dk].asString(), i, j, deckToSolve.cardDeck[dl].asString(), k}));
                                 PushSolution(Expression({deckToSolve.cardDeck[di].asString(), deckToSolve.cardDeck[dj].asString(), deckToSolve.cardDeck[dk].asString(), i, deckToSolve.cardDeck[dl].asString(), j, k}));
@@ -180,6 +181,10 @@ void cardSolver::GenerateSolution(){
             }
         }
     }    
+
+    time(&endTime);
+
+    cout << "Execution time : " << (long)(endTime - startTime) << " ms" << endl;
 }
 
 void cardSolver::PushSolution(Expression candidateSolution){
@@ -191,7 +196,9 @@ void cardSolver::PushSolution(Expression candidateSolution){
 void cardSolver::ShowSolution(){
     if(solutionExpr.size() == 0)
         cout << "solutionExpr is empty" << endl;
-
+    else
+        cout << "There are " << solutionExpr.size() << " solutions." << endl;
+    
     for(auto i:solutionExpr){
         i.ShowExpr();
     }
@@ -200,6 +207,8 @@ void cardSolver::ShowSolution(){
 void cardSolver::ShowInfixSolution(){
     if(solutionExpr.size() == 0)
         cout << "solutionExpr is empty" << endl;
+    else
+        cout << "There are " << solutionExpr.size() << " solutions." << endl;
 
     for(auto i:solutionExpr){
         i.ShowExprAsInfix();

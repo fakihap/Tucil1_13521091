@@ -41,8 +41,8 @@ int main(int argc, const char** argv) {
 
         currentCards.DisplayDeck();
         // currentCards.RandomizeDeck();
-        // currentCards.SetDeck(1, 10, 13, 12);
-        currentCards.SetDeck(4, 4, 4, 4);
+        currentCards.SetDeck(1, 10, 13, 12);
+        // currentCards.SetDeck(4, 4, 4, 4);
         currentCards.DisplayDeck();
 
         csolver.SetDeck(currentCards);
@@ -52,8 +52,11 @@ int main(int argc, const char** argv) {
         // csolver.PushSolution(Expression({currentCards.cardDeck[0].asString(), currentCards.cardDeck[1].asString(), "*", currentCards.cardDeck[2].asString(), "+", currentCards.cardDeck[3].asString(), "-"}));
         // csolver.PushSolution(Expression({currentCards.cardDeck[1].asString(), currentCards.cardDeck[0].asString(), "-", currentCards.cardDeck[2].asString(), "+", currentCards.cardDeck[3].asString(), "-"}));
 
-        csolver.ShowSolution();
         csolver.ShowInfixSolution();
+
+        csolver.PushSolution(Expression({"10", "1", "-", "13", "+", "2", "+"}));
+        csolver.ShowSolution();
+        
 
         break;
     }
