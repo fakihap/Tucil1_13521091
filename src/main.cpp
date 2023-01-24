@@ -14,6 +14,10 @@ void RandomizeCard(){
     getCards(currentCards);
 }
 
+void SetCard(int a, int b, int c, int d){
+    currentCards = {(char)a, (char)b, (char)c, (char)d};
+}
+
 int main(int argc, const char** argv) {
     cout << "main test:" << endl;
 
@@ -24,8 +28,10 @@ int main(int argc, const char** argv) {
 
     // currentCards = getCards();
 
-    RandomizeCard();
-    cout << currentCards[0] << '-' << currentCards[1] << '-' << currentCards[2] << '-' << currentCards[3] << endl;
+    // RandomizeCard();
+    // SetCard(1, 8, 9, 12);
+    SetCard(10, 3, 9, 6);
+    cout << (int)currentCards[0] << ' ' << (int)currentCards[1] << ' ' << (int)currentCards[2] << ' ' << (int)currentCards[3] << endl;
 
     solve(result, currentCards);
 
