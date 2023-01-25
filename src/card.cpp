@@ -5,7 +5,7 @@ int randint(int start, int end){
 }
 
 Card::Card(){
-
+    // default constructor overload
 }
 Card::Card(int init){
     value = init;

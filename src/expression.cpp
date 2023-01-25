@@ -28,9 +28,6 @@ int Expression::getResult(){
             }
         }   
     }
-
-    // if (numStack.size() != 1)
-    //     cout << "EXPRESSION : WARNING numStack has more than 1 member";
     
     if ((numStack[0] - (int)numStack[0]) == 0)
         return (int)numStack[0];

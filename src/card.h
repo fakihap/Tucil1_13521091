@@ -12,8 +12,6 @@
 
     int randint(int start, int end);
 
-    void getCards(vector<char> &cards);
-
     class Card {
         int value  = 0; // NOT A CARD
 
