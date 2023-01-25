@@ -1,12 +1,4 @@
-#include <iostream>
-#include <vector>
-
-#include <time.h>
 #include "card.h"
-
-#include <random>
-
-using namespace std;
  
 int randint(int start, int end){
     return rand() % (end - start + 1) + start;

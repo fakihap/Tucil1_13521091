@@ -1,7 +1,5 @@
 #include "deck.h"
 
-#include <iostream>
-
 void Deck::DisplayDeck(){
     for(auto i:cardDeck){
         cout << i.asCard() << " ";

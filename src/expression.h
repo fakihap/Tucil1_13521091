@@ -1,13 +1,13 @@
 #ifndef EXPRESSION_H
 #define EXPRESSION_H
 
-#include <vector>
-#include <string>
-#include <iostream>
+    #include <vector>
+    #include <string>
+    #include <iostream>
 
-#include "deck.h"
+    #include "deck.h"
 
-using namespace std;
+    using namespace std;
 
     class Expression{
         vector<string> expr;

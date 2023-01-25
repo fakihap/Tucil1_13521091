@@ -1,28 +1,32 @@
 #ifndef CARD_H
 #define CARD_H
 
-#include <vector>
-#include <string>
+    #include <iostream>
+    #include <vector>
+    #include <string>
+    #include <random>
 
-using namespace std;
+    #include <time.h>
 
-int randint(int start, int end);
+    using namespace std;
 
-void getCards(vector<char> &cards);
+    int randint(int start, int end);
 
-class Card {
-    int value  = 0; // NOT A CARD
+    void getCards(vector<char> &cards);
 
-    public:
-        Card();
-        Card(int init);
+    class Card {
+        int value  = 0; // NOT A CARD
 
-        int asInt();
-        string asCard();
-        string asString();
+        public:
+            Card();
+            Card(int init);
 
-        void SetCard(int val);
-        void RandomizeCard();
-};
+            int asInt();
+            string asCard();
+            string asString();
+
+            void SetCard(int val);
+            void RandomizeCard();
+    };
 
 #endif

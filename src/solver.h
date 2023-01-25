@@ -4,10 +4,10 @@
 #include <vector>
 #include <fstream>
 
+#include <time.h>
+
 #include "expression.h"
 #include "deck.h"
-
-#include "time.h"
 
 using namespace std;
 

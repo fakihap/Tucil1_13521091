@@ -2,6 +2,8 @@
 #define DECK_H
     #include "card.h"
 
+    #include <iostream>
+
     class Deck {
         public:
             vector<Card> cardDeck = {Card(), Card(), Card(), Card()};
