@@ -54,7 +54,7 @@ void cardSolver::ClearSolution(){
 }
 
 void cardSolver::SaveSolution(){
-    string path = "../test/Solution_" + to_string(time(0)) + ".txt";
+    string path = "./test/Solution_" + to_string(time(0)) + ".txt";
 
     ofstream SolutionFile(path);
 
