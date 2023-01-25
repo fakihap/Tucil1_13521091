@@ -38,4 +38,4 @@ atau
 6. Untuk mengakhiri program, masukkan nilai `99` pada prompt sehingga terpilihlah menu `99. Keluar`
 
 ## Author
-> [Fakih Anugerah Pratama - 13521091](https://github.com/fakihap/)# Tugas Kecil 1 IF2211 Strategi Algoritma
+> [Fakih Anugerah Pratama - 13521091](https://github.com/fakihap/)
